@@ -20,11 +20,6 @@
     return YES;
 }
 
-- (BOOL)swipeTableCell:(MGSwipeTableCell *)cell canSwipe:(MGSwipeDirection)direction DEPRECATED_ATTRIBUTE {
-    
-    return YES;
-}
-
 - (void)swipeTableCell:(MGSwipeTableCell *)cell didChangeSwipeState:(MGSwipeState)state gestureIsActive:(BOOL)gestureIsActive {
     
 }
