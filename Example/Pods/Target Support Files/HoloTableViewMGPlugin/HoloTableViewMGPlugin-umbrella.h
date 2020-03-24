@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "HoloTableRowMaker+MGPlugin.h"
+#import "HoloTableRowMGProxy.h"
+#import "HoloTableRowMGProxyData.h"
 #import "HoloTableViewMGPlugin.h"
 #import "HoloTableRowMaker+MGPlugin.h"
 #import "HoloTableRowMGProxy.h"
