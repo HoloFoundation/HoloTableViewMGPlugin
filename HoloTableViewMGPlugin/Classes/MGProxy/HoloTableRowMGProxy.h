@@ -1,0 +1,19 @@
+//
+//  HoloTableRowMGProxy.h
+//  HoloTableView
+//
+//  Created by 与佳期 on 2020/3/24.
+//
+
+#import <Foundation/Foundation.h>
+@class HoloTableRowMGProxyData;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface HoloTableRowMGProxy : NSObject
+
+@property (nonatomic, strong) HoloTableRowMGProxyData *proxyData;
+
+@end
+
+NS_ASSUME_NONNULL_END
