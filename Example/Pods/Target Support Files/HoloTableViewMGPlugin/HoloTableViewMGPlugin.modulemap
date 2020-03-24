@@ -1,0 +1,6 @@
+framework module HoloTableViewMGPlugin {
+  umbrella header "HoloTableViewMGPlugin-umbrella.h"
+
+  export *
+  module * { export * }
+}

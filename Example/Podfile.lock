@@ -1,0 +1,16 @@
+PODS:
+  - HoloTableViewMGPlugin (0.1.0)
+
+DEPENDENCIES:
+  - HoloTableViewMGPlugin (from `../`)
+
+EXTERNAL SOURCES:
+  HoloTableViewMGPlugin:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HoloTableViewMGPlugin: f4a13774cddac559ef0328438308f162fe26a0bc
+
+PODFILE CHECKSUM: 2d8b5886011dbff48eb6b75bb45c5362f2577c9c
+
+COCOAPODS: 1.8.4
