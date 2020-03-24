@@ -18,5 +18,13 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "HoloTableViewMGPlugin/Classes/**/*"
+  "source_files": "HoloTableViewMGPlugin/Classes/**/*",
+  "dependencies": {
+    "HoloTableView": [
+
+    ],
+    "MGSwipeTableCell": [
+
+    ]
+  }
 }

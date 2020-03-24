@@ -10,6 +10,10 @@
 #endif
 #endif
 
+#import "HoloTableViewMGPlugin.h"
+#import "HoloTableRowMaker+MGPlugin.h"
+#import "HoloTableRowMGProxy.h"
+#import "HoloTableRowMGProxyData.h"
 
 FOUNDATION_EXPORT double HoloTableViewMGPluginVersionNumber;
 FOUNDATION_EXPORT const unsigned char HoloTableViewMGPluginVersionString[];

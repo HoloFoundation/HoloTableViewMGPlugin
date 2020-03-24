@@ -4,6 +4,7 @@ platform :ios, '8.0'
 
 target 'HoloTableViewMGPlugin_Example' do
   pod 'HoloTableViewMGPlugin', :path => '../'
+  pod 'HoloTableView', :path => '../../HoloTableView'
 
   target 'HoloTableViewMGPlugin_Tests' do
     inherit! :search_paths

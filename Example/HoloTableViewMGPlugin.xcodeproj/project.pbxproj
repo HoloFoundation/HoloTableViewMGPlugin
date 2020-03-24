@@ -38,8 +38,8 @@
 
 /* Begin PBXFileReference section */
 		1243B93DC953C5248CDD24DA /* Pods-HoloTableViewMGPlugin_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloTableViewMGPlugin_Tests.release.xcconfig"; path = "Target Support Files/Pods-HoloTableViewMGPlugin_Tests/Pods-HoloTableViewMGPlugin_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		19A70EBF24EA25B777A43CB5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		22E0354D5A8F6F1DA4DCF994 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		19A70EBF24EA25B777A43CB5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		22E0354D5A8F6F1DA4DCF994 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		398AB9646E953F284BFFF6FE /* Pods-HoloTableViewMGPlugin_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloTableViewMGPlugin_Example.release.xcconfig"; path = "Target Support Files/Pods-HoloTableViewMGPlugin_Example/Pods-HoloTableViewMGPlugin_Example.release.xcconfig"; sourceTree = "<group>"; };
 		569C433CF67F10E9788F85F0 /* Pods-HoloTableViewMGPlugin_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloTableViewMGPlugin_Example.debug.xcconfig"; path = "Target Support Files/Pods-HoloTableViewMGPlugin_Example/Pods-HoloTableViewMGPlugin_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HoloTableViewMGPlugin_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoloTableViewMGPlugin_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +64,7 @@
 		6B32CC39C2D7AA2D8FA537F3 /* Pods_HoloTableViewMGPlugin_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoloTableViewMGPlugin_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C940C4582BF11CFEE278920A /* HoloTableViewMGPlugin.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HoloTableViewMGPlugin.podspec; path = ../HoloTableViewMGPlugin.podspec; sourceTree = "<group>"; };
+		C940C4582BF11CFEE278920A /* HoloTableViewMGPlugin.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HoloTableViewMGPlugin.podspec; path = ../HoloTableViewMGPlugin.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DFF03B3A8198570509C74D51 /* Pods_HoloTableViewMGPlugin_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoloTableViewMGPlugin_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E015756439A6334C58171A4C /* Pods-HoloTableViewMGPlugin_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloTableViewMGPlugin_Tests.debug.xcconfig"; path = "Target Support Files/Pods-HoloTableViewMGPlugin_Tests/Pods-HoloTableViewMGPlugin_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +103,6 @@
 				E015756439A6334C58171A4C /* Pods-HoloTableViewMGPlugin_Tests.debug.xcconfig */,
 				1243B93DC953C5248CDD24DA /* Pods-HoloTableViewMGPlugin_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -346,11 +346,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HoloTableViewMGPlugin_Example/Pods-HoloTableViewMGPlugin_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HoloTableView/HoloTableView.framework",
 				"${BUILT_PRODUCTS_DIR}/HoloTableViewMGPlugin/HoloTableViewMGPlugin.framework",
+				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HoloTableView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HoloTableViewMGPlugin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
