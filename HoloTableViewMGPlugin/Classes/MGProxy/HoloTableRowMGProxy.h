@@ -6,13 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@class HoloTableRowMGProxyData;
+@class HoloTableRowMGAction;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HoloTableRowMGProxy : NSObject
 
-@property (nonatomic, strong) HoloTableRowMGProxyData *proxyData;
+@property (nonatomic, strong) HoloTableRowMGAction *action;
 
 @end
 
