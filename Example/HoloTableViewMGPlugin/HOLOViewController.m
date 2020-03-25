@@ -26,9 +26,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    MGSwipeButton *button1 = [MGSwipeButton buttonWithTitle:@"A123" backgroundColor:[UIColor redColor]];
-    MGSwipeButton *button2 = [MGSwipeButton buttonWithTitle:@"B456" backgroundColor:[UIColor purpleColor]];
-    
     [self.view addSubview:self.tableView];
     [self.tableView holo_makeRows:^(HoloTableViewRowMaker * _Nonnull make) {
         for (NSDictionary *dict in [self _modelsFromOtherWay]) {
@@ -36,7 +33,11 @@
                 return YES;
             })
             .swipeButtonsHandler(^NSArray<UIView *> * _Nonnull(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, MGSwipeSettings * _Nonnull swipeSettings, MGSwipeExpansionSettings * _Nonnull expansionSettings) {
-                return @[button1, button2];
+                if (direction == MGSwipeDirectionLeftToRight) {
+                    return @[[MGSwipeButton buttonWithTitle:dict[@"text"] backgroundColor:[UIColor redColor]]];
+                } else {
+                    return @[[MGSwipeButton buttonWithTitle:dict[@"text"] backgroundColor:[UIColor redColor]]];
+                }
             });
         }
     }];
