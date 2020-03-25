@@ -8,5 +8,8 @@
 #ifndef HoloTableViewMGPlugin_h
 #define HoloTableViewMGPlugin_h
 
+#import "HoloTableRowMaker+MGPlugin.h"
+#import "HoloTableRowMGAction.h"
+#import "HoloTableRowMGProxy.h"
 
 #endif /* HoloTableViewMGPlugin_h */
