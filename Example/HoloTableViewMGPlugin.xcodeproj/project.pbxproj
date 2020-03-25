@@ -22,6 +22,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		7597010C242BC63900EA2652 /* HoloExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7597010B242BC63900EA2652 /* HoloExampleTableViewCell.m */; };
 		8440AA788AE1846AE84F5889 /* Pods_HoloTableViewMGPlugin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B32CC39C2D7AA2D8FA537F3 /* Pods_HoloTableViewMGPlugin_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,8 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6B32CC39C2D7AA2D8FA537F3 /* Pods_HoloTableViewMGPlugin_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoloTableViewMGPlugin_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7597010A242BC63900EA2652 /* HoloExampleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoloExampleTableViewCell.h; sourceTree = "<group>"; };
+		7597010B242BC63900EA2652 /* HoloExampleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoloExampleTableViewCell.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C940C4582BF11CFEE278920A /* HoloTableViewMGPlugin.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HoloTableViewMGPlugin.podspec; path = ../HoloTableViewMGPlugin.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DFF03B3A8198570509C74D51 /* Pods_HoloTableViewMGPlugin_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HoloTableViewMGPlugin_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +151,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HOLOViewController.h */,
 				6003F5A6195388D20070C39A /* HOLOViewController.m */,
+				7597010A242BC63900EA2652 /* HoloExampleTableViewCell.h */,
+				7597010B242BC63900EA2652 /* HoloExampleTableViewCell.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -370,6 +375,7 @@
 			files = (
 				6003F59E195388D20070C39A /* HOLOAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* HOLOViewController.m in Sources */,
+				7597010C242BC63900EA2652 /* HoloExampleTableViewCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
