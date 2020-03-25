@@ -6,14 +6,7 @@
 //
 
 #import "HoloTableRowMGProxy.h"
-#import <MGSwipeTableCell/MGSwipeTableCell.h>
 #import "HoloTableRowMGAction.h"
-
-@interface HoloTableRowMGProxy () <MGSwipeTableCellDelegate>
-
-@property (nonatomic, weak) UITableView *tableView;
-
-@end
 
 @implementation HoloTableRowMGProxy
 

@@ -6,11 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MGSwipeTableCell/MGSwipeTableCell.h>
 @class HoloTableRowMGAction;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HoloTableRowMGProxy : NSObject
+@interface HoloTableRowMGProxy : NSObject <MGSwipeTableCellDelegate>
 
 @property (nonatomic, strong) HoloTableRowMGAction *action;
 
