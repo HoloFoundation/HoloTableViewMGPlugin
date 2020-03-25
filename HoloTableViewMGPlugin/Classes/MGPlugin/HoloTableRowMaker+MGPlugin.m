@@ -20,7 +20,7 @@ static char kHoloTableRowMGProxyKey;
 @implementation HoloTableRowMaker (MGPlugin)
 
 - (HoloTableRowMaker * (^)(BOOL (^)(MGSwipeTableCell *, MGSwipeDirection, CGPoint)))canSwipeHandler {
-    return ^id(id obj) {
+    return ^id(BOOL b) {
 //        self.tableRow.targetMoveHandler = obj;
         return self;
     };
@@ -34,6 +34,7 @@ static char kHoloTableRowMGProxyKey;
         objc_setAssociatedObject(self.tableRow, &kHoloTableRowMGProxyKey, proxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
         if (!self.tableRow.delegate) {
+            self.tableRow.delegateSEL = @selector(setDelegate:);
             self.tableRow.delegate = proxy;
         }
     }
