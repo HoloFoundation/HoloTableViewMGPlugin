@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'HoloTableViewMGPlugin'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of HoloTableViewMGPlugin.'
+  s.summary          = 'A MGSwipeTableCell plugin for HoloTableView'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+This project adds a plugin for MGSwipeTableCell into HoloTableView, for supporting swipe actions.
                        DESC
 
   s.homepage         = 'https://github.com/gonghonglou/HoloTableViewMGPlugin'
