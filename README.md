@@ -13,7 +13,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 HoloTableViewMGPlugin is a plugin for [HoloTableView](https://github.com/gonghonglou/HoloTableView) framework, which provide the swip actions support for [MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell).
 
-By using HoloTableViewMGPlugin, you can use all the methods of MGSwipeTableCell with HoloTableRowMaker.
+By using HoloTableViewMGPlugin, you can use all the methods of MGSwipeTableCell with `HoloTableRowMaker`.
 
 To use it, simply make sure you use MGSwipeTableCell and import this plugin.
 
@@ -24,7 +24,7 @@ UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds sty
 [self.view addSubview:tableView];
 
 [self.tableView holo_makeRows:^(HoloTableViewRowMaker * _Nonnull make) {
-    make.row(OneTableViewCell.class).model(@{@"key":@"value1"})
+    make.row(ExampleMGSwipeTableCell.class).model(@{@"key":@"value"})
     .canSwipeHandler(^BOOL(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, CGPoint fromPoint) {
         return YES;
     })
