@@ -11,7 +11,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## What's for
 
-HoloTableViewMGPlugin is a plugin for HoloTableView framework, which provide the swip actions support for MGSwipeTableCell.
+HoloTableViewMGPlugin is a plugin for [HoloTableView](https://github.com/gonghonglou/HoloTableView) framework, which provide the swip actions support for [MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell).
 
 By using HoloTableViewMGPlugin, you can use all the methods of MGSwipeTableCell with HoloTableRowMaker.
 
