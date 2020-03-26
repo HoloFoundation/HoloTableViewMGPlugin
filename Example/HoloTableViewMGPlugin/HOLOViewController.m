@@ -29,7 +29,8 @@
     [self.view addSubview:self.tableView];
     [self.tableView holo_makeRows:^(HoloTableViewRowMaker * _Nonnull make) {
         for (NSDictionary *dict in [self _modelsFromOtherWay]) {
-            make.row(HoloExampleTableViewCell.class).model(dict).canSwipeHandler(^BOOL(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, CGPoint fromPoint) {
+            make.row(HoloExampleTableViewCell.class).model(dict)
+            .canSwipeHandler(^BOOL(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, CGPoint fromPoint) {
                 return YES;
             })
             .swipeButtonsHandler(^NSArray<UIView *> * _Nonnull(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, MGSwipeSettings * _Nonnull swipeSettings, MGSwipeExpansionSettings * _Nonnull expansionSettings) {
@@ -38,6 +39,12 @@
                 } else {
                     return @[[MGSwipeButton buttonWithTitle:dict[@"text"] backgroundColor:[UIColor redColor]]];
                 }
+            })
+            .willBeginSwipingHandler(^(MGSwipeTableCell * _Nonnull cell) {
+                NSLog(@"begin swiping: %@", cell);
+            })
+            .willEndSwipingHandler(^(MGSwipeTableCell * _Nonnull cell) {
+                NSLog(@"end swiping: %@", cell);
             });
         }
     }];
