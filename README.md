@@ -9,7 +9,44 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## What's for
+
+HoloTableViewMGPlugin is a plugin for HoloTableView framework, which provide the swip actions support for MGSwipeTableCell.
+
+By using HoloTableViewMGPlugin, you can use all the methods of MGSwipeTableCell with HoloTableRowMaker.
+
+To use it, simply make sure you use MGSwipeTableCell and import this plugin.
+
+## Usage
+
+```objective-c
+UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+[self.view addSubview:tableView];
+
+[self.tableView holo_makeRows:^(HoloTableViewRowMaker * _Nonnull make) {
+    make.row(OneTableViewCell.class).model(@{@"key":@"value1"})
+    .canSwipeHandler(^BOOL(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, CGPoint fromPoint) {
+        return YES;
+    })
+    .swipeButtonsHandler(^NSArray<UIView *> * _Nonnull(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, MGSwipeSettings * _Nonnull swipeSettings, MGSwipeExpansionSettings * _Nonnull expansionSettings) {
+        if (direction == MGSwipeDirectionLeftToRight) {
+            return @[[MGSwipeButton buttonWithTitle:@"Left" backgroundColor:[UIColor redColor]]];
+        } else {
+            return @[[MGSwipeButton buttonWithTitle:@"Right" backgroundColor:[UIColor redColor]]];
+        }
+    })
+    .willBeginSwipingHandler(^(MGSwipeTableCell * _Nonnull cell) {
+        NSLog(@"begin swiping: %@", cell);
+    })
+    .willEndSwipingHandler(^(MGSwipeTableCell * _Nonnull cell) {
+        NSLog(@"end swiping: %@", cell);
+    });
+}];
+
+[self.tableView reloadData];
+
+// etc...
+```
 
 ## Installation
 
