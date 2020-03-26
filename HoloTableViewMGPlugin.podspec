@@ -39,7 +39,8 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'HoloTableView'
-  s.dependency 'MGSwipeTableCell'
+  
+  s.dependency 'HoloTableView', '>= 1.6.0'
+  s.dependency 'MGSwipeTableCell', '>= 1.6.11'
   
 end
