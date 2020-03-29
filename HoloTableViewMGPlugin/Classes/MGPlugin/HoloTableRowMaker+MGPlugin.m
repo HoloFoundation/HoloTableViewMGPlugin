@@ -9,6 +9,7 @@
 #import <objc/runtime.h>
 #import "HoloTableRowMGProxy.h"
 #import "HoloTableRowMGAction.h"
+#import "HoloTableRowMGMaker.h"
 
 static char kHoloTableRowMGProxyKey;
 
@@ -65,6 +66,16 @@ static char kHoloTableRowMGProxyKey;
 - (HoloTableRowMaker * (^)(void (^)(MGSwipeTableCell *)))willEndSwipingHandler {
     return ^id(id obj) {
         self.proxy.action.willEndSwipingHandler = obj;
+        return self;
+    };
+}
+
+- (HoloTableRowMaker * (^)(NS_NOESCAPE void (^)(HoloTableRowMGMaker *)))makeSwipButtons {
+    return ^id(void(^block)(HoloTableRowMGMaker *make)) {
+        HoloTableRowMGMaker *maker = [HoloTableRowMGMaker new];
+        if (block) block(maker);
+        
+//        [self.proxy.action insertRows:[maker install] atIndex:NSIntegerMax];
         return self;
     };
 }

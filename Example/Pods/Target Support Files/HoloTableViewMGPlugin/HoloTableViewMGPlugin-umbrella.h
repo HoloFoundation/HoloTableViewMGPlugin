@@ -13,6 +13,7 @@
 #import "HoloTableViewMGPlugin.h"
 #import "HoloTableRowMaker+MGPlugin.h"
 #import "HoloTableRowMGAction.h"
+#import "HoloTableRowMGMaker.h"
 #import "HoloTableRowMGProxy.h"
 
 FOUNDATION_EXPORT double HoloTableViewMGPluginVersionNumber;

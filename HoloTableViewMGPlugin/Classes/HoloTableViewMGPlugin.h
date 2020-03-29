@@ -9,6 +9,7 @@
 #define HoloTableViewMGPlugin_h
 
 #import "HoloTableRowMaker+MGPlugin.h"
+#import "HoloTableRowMGMaker.h"
 #import "HoloTableRowMGAction.h"
 #import "HoloTableRowMGProxy.h"
 
