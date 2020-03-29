@@ -80,6 +80,13 @@ static char kHoloTableRowMGProxyKey;
     };
 }
 
+- (HoloTableRowMaker * (^)(id<MGSwipeTableCellDelegate>))MGDelegate {
+    return ^id(id obj) {
+        self.proxy.action.delegate = obj;
+        return self;
+    };
+}
+
 #pragma mark - getter
 - (HoloTableRowMGProxy *)proxy {
     HoloTableRowMGProxy *mgProxy = objc_getAssociatedObject(self.tableRow, &kHoloTableRowMGProxyKey);

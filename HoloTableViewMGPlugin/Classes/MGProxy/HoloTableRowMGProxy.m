@@ -11,6 +11,10 @@
 @implementation HoloTableRowMGProxy
 
 - (BOOL)swipeTableCell:(MGSwipeTableCell *)cell canSwipe:(MGSwipeDirection)direction fromPoint:(CGPoint)point {
+    if (self.action.delegate && [self.action.delegate respondsToSelector:@selector(swipeTableCell:canSwipe:fromPoint:)]) {
+        return [self.action.delegate swipeTableCell:cell canSwipe:direction fromPoint:point];
+    }
+    
     if (self.action.canSwipeHandler) {
         return self.action.canSwipeHandler(cell, direction, point);
     } else {
@@ -19,12 +23,21 @@
 }
 
 - (void)swipeTableCell:(MGSwipeTableCell *)cell didChangeSwipeState:(MGSwipeState)state gestureIsActive:(BOOL)gestureIsActive {
+    if (self.action.delegate && [self.action.delegate respondsToSelector:@selector(swipeTableCell:didChangeSwipeState:gestureIsActive:)]) {
+        [self.action.delegate swipeTableCell:cell didChangeSwipeState:state gestureIsActive:gestureIsActive];
+        return;
+    }
+    
     if (self.action.didChangeSwipeHandler) {
         self.action.didChangeSwipeHandler(cell, state, gestureIsActive);
     }
 }
 
 - (BOOL)swipeTableCell:(MGSwipeTableCell *)cell tappedButtonAtIndex:(NSInteger)index direction:(MGSwipeDirection)direction fromExpansion:(BOOL)fromExpansion {
+    if (self.action.delegate && [self.action.delegate respondsToSelector:@selector(swipeTableCell:tappedButtonAtIndex:direction:fromExpansion:)]) {
+        return [self.action.delegate swipeTableCell:cell tappedButtonAtIndex:index direction:direction fromExpansion:fromExpansion];
+    }
+    
     if (self.action.tappedSwipeButtonHandler) {
         return self.action.tappedSwipeButtonHandler(cell, index, direction, fromExpansion);
     } else {
@@ -33,6 +46,10 @@
 }
 
 - (NSArray<UIView *> *)swipeTableCell:(MGSwipeTableCell *)cell swipeButtonsForDirection:(MGSwipeDirection)direction swipeSettings:(MGSwipeSettings *)swipeSettings expansionSettings:(MGSwipeExpansionSettings *)expansionSettings {
+    if (self.action.delegate && [self.action.delegate respondsToSelector:@selector(swipeTableCell:swipeButtonsForDirection:swipeSettings:expansionSettings:)]) {
+        return [self.action.delegate swipeTableCell:cell swipeButtonsForDirection:direction swipeSettings:swipeSettings expansionSettings:expansionSettings];
+    }
+    
     if (self.action.swipeButtonsHandler) {
         return self.action.swipeButtonsHandler(cell, direction, swipeSettings, expansionSettings);
     } else {
@@ -41,6 +58,10 @@
 }
 
 - (BOOL)swipeTableCell:(MGSwipeTableCell *)cell shouldHideSwipeOnTap:(CGPoint)point {
+    if (self.action.delegate && [self.action.delegate respondsToSelector:@selector(swipeTableCell:shouldHideSwipeOnTap:)]) {
+        return [self.action.delegate swipeTableCell:cell shouldHideSwipeOnTap:point];
+    }
+    
     if (self.action.shouldHideSwipeOnTapHandler) {
         return self.action.shouldHideSwipeOnTapHandler(cell, point);
     } else {
@@ -49,12 +70,22 @@
 }
 
 - (void)swipeTableCellWillBeginSwiping:(MGSwipeTableCell *)cell {
+    if (self.action.delegate && [self.action.delegate respondsToSelector:@selector(swipeTableCellWillBeginSwiping:)]) {
+        [self.action.delegate swipeTableCellWillBeginSwiping:cell];
+        return;
+    }
+    
     if (self.action.willBeginSwipingHandler) {
         self.action.willBeginSwipingHandler(cell);
     }
 }
 
 - (void)swipeTableCellWillEndSwiping:(MGSwipeTableCell *)cell {
+    if (self.action.delegate && [self.action.delegate respondsToSelector:@selector(swipeTableCellWillEndSwiping:)]) {
+        [self.action.delegate swipeTableCellWillEndSwiping:cell];
+        return;
+    }
+    
     if (self.action.willEndSwipingHandler) {
         self.action.willEndSwipingHandler(cell);
     }
