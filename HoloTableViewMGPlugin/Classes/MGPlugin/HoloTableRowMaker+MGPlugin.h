@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) HoloTableRowMaker *(^willEndSwipingHandler)(void(^)(MGSwipeTableCell *cell));
 
 
-@property (nonatomic, copy, readonly) HoloTableRowMaker *(^makeSwipButtons)(void(NS_NOESCAPE ^)(HoloTableRowMGMaker *MGMake));
+@property (nonatomic, copy, readonly) HoloTableRowMaker *(^makeSwipButtons)(void(NS_NOESCAPE ^)(HoloTableRowMGMaker *make));
 
 @property (nonatomic, copy, readonly) HoloTableRowMaker *(^MGDelegate)(id<MGSwipeTableCellDelegate> delegate);
 
