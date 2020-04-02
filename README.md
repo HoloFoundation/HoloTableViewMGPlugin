@@ -24,17 +24,23 @@ UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds sty
 [self.view addSubview:tableView];
 
 [self.tableView holo_makeRows:^(HoloTableViewRowMaker * _Nonnull make) {
-    make.row(ExampleMGSwipeTableCell.class).model(@{@"key":@"value"})
+    make.row(ExampleMGSwipeTableCell.class).model(NSDictionary.new)
     .canSwipeHandler(^BOOL(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, CGPoint fromPoint) {
         return YES;
     })
+    .makeSwipButtons(^(HoloTableRowMGMaker * _Nonnull make) {
+        make.direction(MGSwipeDirectionLeftToRight).title(@"Left").backgroundColor(UIColor.redColor);
+        make.direction(MGSwipeDirectionRightToLeft).title(@"Right").backgroundColor(UIColor.redColor);
+    })
+    /*
     .swipeButtonsHandler(^NSArray<UIView *> * _Nonnull(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, MGSwipeSettings * _Nonnull swipeSettings, MGSwipeExpansionSettings * _Nonnull expansionSettings) {
         if (direction == MGSwipeDirectionLeftToRight) {
-            return @[[MGSwipeButton buttonWithTitle:@"Left" backgroundColor:[UIColor redColor]]];
+            return @[[MGSwipeButton buttonWithTitle:dict[@"Left"] backgroundColor:UIColor.redColor]];
         } else {
-            return @[[MGSwipeButton buttonWithTitle:@"Right" backgroundColor:[UIColor redColor]]];
+            return @[[MGSwipeButton buttonWithTitle:dict[@"Right"] backgroundColor:UIColor.redColor]];
         }
     })
+     */
     .willBeginSwipingHandler(^(MGSwipeTableCell * _Nonnull cell) {
         NSLog(@"begin swiping: %@", cell);
     })
