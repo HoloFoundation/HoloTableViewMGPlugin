@@ -74,8 +74,8 @@ static char kHoloTableRowMGProxyKey;
     return ^id(void(^block)(HoloTableRowMGMaker *make)) {
         HoloTableRowMGMaker *maker = [HoloTableRowMGMaker new];
         if (block) block(maker);
-        
-//        [self.proxy.action insertRows:[maker install] atIndex:NSIntegerMax];
+        self.proxy.action.leftToRightButtons = [maker leftToRightButtonsInstall];
+        self.proxy.action.rightToLeftButtons = [maker rightToLeftButtonsInstall];
         return self;
     };
 }

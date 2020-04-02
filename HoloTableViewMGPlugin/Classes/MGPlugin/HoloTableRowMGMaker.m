@@ -21,7 +21,9 @@
         self.swipeButton = [MGSwipeButton buttonWithType:UIButtonTypeCustom];
         self.swipeButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         self.swipeButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self.swipeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self.swipeButton setEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+        [self.swipeButton sizeToFit];
     }
     return self;
 }
@@ -29,6 +31,7 @@
 - (HoloTableRowMGSwipeButtonMaker * (^)(NSString *))title {
     return ^(id obj) {
         [self.swipeButton setTitle:obj forState:UIControlStateNormal];
+        [self.swipeButton sizeToFit];
         return self;
     };
 }
@@ -99,9 +102,9 @@
 
 @interface HoloTableRowMGMaker ()
 
-@property (nonatomic, strong) NSMutableArray<HoloTableRowMGSwipeButtonMaker *> *leftToRightButtons;
+@property (nonatomic, strong) NSMutableArray<MGSwipeButton *> *leftToRightButtons;
 
-@property (nonatomic, strong) NSMutableArray<HoloTableRowMGSwipeButtonMaker *> *rightToLeftButtons;
+@property (nonatomic, strong) NSMutableArray<MGSwipeButton *> *rightToLeftButtons;
 
 @end
 
@@ -111,27 +114,31 @@
     return ^id(MGSwipeDirection direction) {
         HoloTableRowMGSwipeButtonMaker *buttonMaker = [HoloTableRowMGSwipeButtonMaker new];
         if (direction == MGSwipeDirectionLeftToRight) {
-            [self.leftToRightButtons addObject:buttonMaker];
+            [self.leftToRightButtons addObject:buttonMaker.swipeButton];
         } else {
-            [self.rightToLeftButtons addObject:buttonMaker];
+            [self.rightToLeftButtons addObject:buttonMaker.swipeButton];
         }
         return buttonMaker;
     };
 }
 
-- (void)install {
-    
+- (NSArray<MGSwipeButton *> *)leftToRightButtonsInstall {
+    return self.leftToRightButtons.copy;
+}
+
+- (NSArray<MGSwipeButton *> *)rightToLeftButtonsInstall {
+    return self.rightToLeftButtons.copy;
 }
 
 #pragma mark - getter
-- (NSMutableArray<HoloTableRowMGSwipeButtonMaker *> *)leftToRightButtons {
+- (NSMutableArray<MGSwipeButton *> *)leftToRightButtons {
     if (!_leftToRightButtons) {
         _leftToRightButtons = [NSMutableArray new];
     }
     return _leftToRightButtons;
 }
 
-- (NSMutableArray<HoloTableRowMGSwipeButtonMaker *> *)rightToLeftButtons {
+- (NSMutableArray<MGSwipeButton *> *)rightToLeftButtons {
     if (!_rightToLeftButtons) {
         _rightToLeftButtons = [NSMutableArray new];
     }

@@ -40,7 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly) HoloTableRowMGSwipeButtonMaker *(^direction)(MGSwipeDirection direction);
 
-- (void)install;
+- (NSArray<MGSwipeButton *> *)leftToRightButtonsInstall;
+
+- (NSArray<MGSwipeButton *> *)rightToLeftButtonsInstall;
 
 @end
 

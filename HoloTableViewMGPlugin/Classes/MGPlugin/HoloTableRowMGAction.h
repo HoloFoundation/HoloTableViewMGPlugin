@@ -29,6 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, nullable) id<MGSwipeTableCellDelegate> delegate;
 
+@property (nonatomic, copy) NSArray<MGSwipeButton *> *leftToRightButtons;
+
+@property (nonatomic, copy) NSArray<MGSwipeButton *> *rightToLeftButtons;
+
 @end
 
 NS_ASSUME_NONNULL_END

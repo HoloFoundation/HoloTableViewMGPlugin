@@ -52,8 +52,12 @@
     
     if (self.action.swipeButtonsHandler) {
         return self.action.swipeButtonsHandler(cell, direction, swipeSettings, expansionSettings);
+    } else if (direction == MGSwipeDirectionLeftToRight) {
+        return self.action.leftToRightButtons;
+    } else if (direction == MGSwipeDirectionRightToLeft) {
+        return self.action.rightToLeftButtons;
     } else {
-        return [NSArray array];
+        return [NSArray new];
     }
 }
 
