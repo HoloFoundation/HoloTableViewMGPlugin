@@ -70,6 +70,28 @@ static char kHoloTableRowMGProxyKey;
     };
 }
 
+
+- (HoloTableRowMaker * (^)(BOOL))canSwipe {
+    return ^id(BOOL b) {
+        self.proxy.action.canSwipe = b;
+        return self;
+    };
+}
+
+- (HoloTableRowMaker * (^)(BOOL))tappedSwipeButton {
+    return ^id(BOOL b) {
+        self.proxy.action.tappedSwipeButton = b;
+        return self;
+    };
+}
+
+- (HoloTableRowMaker * (^)(BOOL))shouldHideSwipeOnTap {
+    return ^id(BOOL b) {
+        self.proxy.action.shouldHideSwipeOnTap = b;
+        return self;
+    };
+}
+
 - (HoloTableRowMaker * (^)(NS_NOESCAPE void (^)(HoloTableRowMGMaker *)))makeSwipButtons {
     return ^id(void(^block)(HoloTableRowMGMaker *make)) {
         HoloTableRowMGMaker *maker = [HoloTableRowMGMaker new];

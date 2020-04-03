@@ -9,4 +9,14 @@
 
 @implementation HoloTableRowMGAction
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.canSwipe = YES;
+        self.tappedSwipeButton = NO;
+        self.shouldHideSwipeOnTap = YES;
+    }
+    return self;
+}
+
 @end

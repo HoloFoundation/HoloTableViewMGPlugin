@@ -27,11 +27,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^willEndSwipingHandler)(MGSwipeTableCell *cell);
 
 
-@property (nonatomic, weak, nullable) id<MGSwipeTableCellDelegate> delegate;
+@property (nonatomic, assign) BOOL canSwipe;
+
+@property (nonatomic, assign) BOOL tappedSwipeButton;
+
+@property (nonatomic, assign) BOOL shouldHideSwipeOnTap;
 
 @property (nonatomic, copy) NSArray<MGSwipeButton *> *leftToRightButtons;
 
 @property (nonatomic, copy) NSArray<MGSwipeButton *> *rightToLeftButtons;
+
+@property (nonatomic, weak, nullable) id<MGSwipeTableCellDelegate> delegate;
 
 @end
 

@@ -18,7 +18,7 @@
     if (self.action.canSwipeHandler) {
         return self.action.canSwipeHandler(cell, direction, point);
     } else {
-        return YES;
+        return self.action.canSwipe;
     }
 }
 
@@ -41,7 +41,7 @@
     if (self.action.tappedSwipeButtonHandler) {
         return self.action.tappedSwipeButtonHandler(cell, index, direction, fromExpansion);
     } else {
-        return NO;
+        return self.action.tappedSwipeButton;
     }
 }
 
@@ -69,7 +69,7 @@
     if (self.action.shouldHideSwipeOnTapHandler) {
         return self.action.shouldHideSwipeOnTapHandler(cell, point);
     } else {
-        return YES;
+        return self.action.shouldHideSwipeOnTap;
     }
 }
 

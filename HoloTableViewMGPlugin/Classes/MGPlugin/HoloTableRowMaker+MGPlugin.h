@@ -48,8 +48,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) HoloTableRowMaker *(^willEndSwipingHandler)(void(^)(MGSwipeTableCell *cell));
 
 
+/// If canSwipeHandler is nil, use the value
+@property (nonatomic, copy, readonly) HoloTableRowMaker *(^canSwipe)(BOOL canSwipe);
+
+/// If tappedSwipeButtonHandler is nil, use the value
+@property (nonatomic, copy, readonly) HoloTableRowMaker *(^tappedSwipeButton)(BOOL tappedSwipeButton);
+
+/// If shouldHideSwipeOnTapHandler is nil, use the value
+@property (nonatomic, copy, readonly) HoloTableRowMaker *(^shouldHideSwipeOnTap)(BOOL shouldHideSwipe);
+
+/// If swipeButtonsHandler is nil, use the value
 @property (nonatomic, copy, readonly) HoloTableRowMaker *(^makeSwipButtons)(void(NS_NOESCAPE ^)(HoloTableRowMGMaker *make));
 
+/// You can implement MGSwipeTableCellDelegate by setting the delegate
 @property (nonatomic, copy, readonly) HoloTableRowMaker *(^delegate)(id<MGSwipeTableCellDelegate> delegate);
 
 @end
