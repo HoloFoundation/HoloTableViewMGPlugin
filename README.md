@@ -39,9 +39,9 @@ UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds sty
     })
     .swipeButtonsHandler(^NSArray<UIView *> * _Nonnull(MGSwipeTableCell * _Nonnull cell, MGSwipeDirection direction, MGSwipeSettings * _Nonnull swipeSettings, MGSwipeExpansionSettings * _Nonnull expansionSettings) {
         if (direction == MGSwipeDirectionLeftToRight) {
-            return @[[MGSwipeButton buttonWithTitle:dict[@"Left"] backgroundColor:UIColor.redColor]];
+            return @[[MGSwipeButton buttonWithTitle:@"Left" backgroundColor:UIColor.redColor]];
         } else {
-            return @[[MGSwipeButton buttonWithTitle:dict[@"Right"] backgroundColor:UIColor.redColor]];
+            return @[[MGSwipeButton buttonWithTitle:@"Right" backgroundColor:UIColor.redColor]];
         }
     })
     .willBeginSwipingHandler(^(MGSwipeTableCell * _Nonnull cell) {
