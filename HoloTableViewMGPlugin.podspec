@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HoloTableViewMGPlugin'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A MGSwipeTableCell plugin for HoloTableView'
 
 # This description is used to generate tags and improve search results.
@@ -40,7 +40,7 @@ This project adds a plugin for MGSwipeTableCell into HoloTableView, for supporti
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   
-  s.dependency 'HoloTableView', '>= 1.6.0'
+  s.dependency 'HoloTableView', '>= 1.7.0'
   s.dependency 'MGSwipeTableCell', '>= 1.6.11'
   
 end

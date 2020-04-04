@@ -111,14 +111,15 @@ static char kHoloTableRowMGProxyKey;
 
 #pragma mark - getter
 - (HoloTableRowMGProxy *)proxy {
-    HoloTableRowMGProxy *mgProxy = objc_getAssociatedObject(self.tableRow, &kHoloTableRowMGProxyKey);
+    HoloTableRow *tableRow = [self fetchTableRow];
+    HoloTableRowMGProxy *mgProxy = objc_getAssociatedObject(tableRow, &kHoloTableRowMGProxyKey);
     if (!mgProxy) {
         mgProxy = [HoloTableRowMGProxy new];
-        objc_setAssociatedObject(self.tableRow, &kHoloTableRowMGProxyKey, mgProxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(tableRow, &kHoloTableRowMGProxyKey, mgProxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
-        if (!self.tableRow.delegate) {
-            self.tableRow.delegateSEL = @selector(setDelegate:);
-            self.tableRow.delegate = mgProxy;
+        if (!tableRow.delegate) {
+            tableRow.delegateSEL = @selector(setDelegate:);
+            tableRow.delegate = mgProxy;
         }
     }
     return mgProxy;

@@ -9,6 +9,12 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+
+## Integration with 3rd party libraries
+
+- [HoloTableViewMGPlugin](https://github.com/gonghonglou/HoloTableViewMGPlugin) - plugin to support [MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell), add swip actions for cell.
+
+
 ## Requirements
 
 If you want to set the model to your UITableViewCell or change it's height according to the model, the UITableViewCell could conform to protocol: `HoloTableViewCellProtocol` and implement their selectors: 
@@ -26,17 +32,15 @@ UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds sty
 [self.view addSubview:tableView];
 
 [tableView holo_makeRows:^(HoloTableViewRowMaker * _Nonnull make) {
-   // one cell
-   make.row(OneTableViewCell.class).model(@{@"key":@"value1"});
-   make.row(OneTableViewCell.class).model(@{@"key":@"value2"});
+   // make a cell
+   make.row(ExampleTableViewCell.class).model(NSDictionary.new).height(44);
    
-   // two cell
-   make.row(TwoTableViewCell.class).model(@{@"key":@"value"}).height(44);
-   
-   // three cell
-   make.row(ThreeTableViewCell.class).didSelectHandler(^(id  _Nonnull model) {
-       NSLog(@"did select row, model: %@", model);
-   });
+   // make a list
+   for (NSObject *obj in NSArray.new) {
+       make.row(ExampleTableViewCell.class).model(obj).didSelectHandler(^(id  _Nullable model) {
+           NSLog(@"did select row : %@", model);
+       });
+   }
 }];
 
 [self.tableView reloadData];
