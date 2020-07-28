@@ -30,6 +30,12 @@ UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds sty
     .makeSwipButtons(^(HoloTableRowMGMaker * _Nonnull make) {
         make.direction(MGSwipeDirectionLeftToRight).title(@"Left").backgroundColor(UIColor.redColor);
         make.direction(MGSwipeDirectionRightToLeft).title(@"Right").backgroundColor(UIColor.redColor);
+
+        make.direction(MGSwipeDirectionRightToLeft).title(@"Right2").backgroundColor(UIColor.redColor)
+        .callback(^BOOL(MGSwipeTableCell * _Nonnull cell) {
+            NSLog(@"tag Right2 swip button");
+            return YES;
+        });
     });
     
     // example 2

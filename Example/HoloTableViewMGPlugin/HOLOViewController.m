@@ -33,16 +33,13 @@
             make.row(HoloExampleTableViewCell.class).model(dict)
             .canSwipe(YES)
             .makeSwipButtons(^(HoloTableRowMGMaker * _Nonnull make) {
-                make.direction(MGSwipeDirectionLeftToRight).title(@"Left").backgroundColor(UIColor.redColor)
+                make.direction(MGSwipeDirectionLeftToRight).title(@"Left").backgroundColor(UIColor.redColor);
+                make.direction(MGSwipeDirectionRightToLeft).title(@"Right").backgroundColor(UIColor.redColor);
+
+                make.direction(MGSwipeDirectionRightToLeft).title(@"Right2").backgroundColor(UIColor.blueColor)
                 .callback(^BOOL(MGSwipeTableCell * _Nonnull cell) {
-                    NSLog(@"selected Left swip button");
+                    NSLog(@"tag Right2 swip button");
                     return YES;
-                });
-                
-                make.direction(MGSwipeDirectionRightToLeft).title(@"Right").backgroundColor(UIColor.redColor)
-                .callback(^BOOL(MGSwipeTableCell * _Nonnull cell) {
-                    NSLog(@"selected Right swip button");
-                    return NO;
                 });
             });
             
