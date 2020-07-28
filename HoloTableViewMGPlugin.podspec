@@ -40,7 +40,7 @@ This project adds a plugin for MGSwipeTableCell into HoloTableView, for supporti
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   
-  s.dependency 'HoloTableView', '>= 1.7.0'
-  s.dependency 'MGSwipeTableCell', '>= 1.6.11'
+  s.dependency 'HoloTableView', '~> 2.0'
+  s.dependency 'MGSwipeTableCell', '~> 1.6'
   
 end

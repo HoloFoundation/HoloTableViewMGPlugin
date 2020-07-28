@@ -1,8 +1,8 @@
 PODS:
-  - HoloTableView (1.7.0)
+  - HoloTableView (2.0.0)
   - HoloTableViewMGPlugin (0.2.0):
-    - HoloTableView (>= 1.7.0)
-    - MGSwipeTableCell (>= 1.6.11)
+    - HoloTableView (~> 2.0)
+    - MGSwipeTableCell (~> 1.6)
   - MGSwipeTableCell (1.6.11)
 
 DEPENDENCIES:
@@ -18,10 +18,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HoloTableView: 108cd10ef43da2cbf1d0d732aefca88f26a6bc89
-  HoloTableViewMGPlugin: c883e24592359a27893cfc0897dd9d2dae0dc393
+  HoloTableView: 04dfcdc2a27ba37cbb9e6952168586deba9778de
+  HoloTableViewMGPlugin: 29592f16aaf75f8da4344addc6f3c740651ceb2e
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
 
 PODFILE CHECKSUM: 050080c758aa87de46106f4ef92c5d25be77d42a
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

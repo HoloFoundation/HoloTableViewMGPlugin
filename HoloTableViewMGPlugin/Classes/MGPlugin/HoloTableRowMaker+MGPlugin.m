@@ -7,6 +7,7 @@
 
 #import "HoloTableRowMaker+MGPlugin.h"
 #import <objc/runtime.h>
+#import <HoloTableView/HoloTableRow.h>
 #import "HoloTableRowMGProxy.h"
 #import "HoloTableRowMGAction.h"
 #import "HoloTableRowMGMaker.h"
@@ -117,10 +118,8 @@ static char kHoloTableRowMGProxyKey;
         mgProxy = [HoloTableRowMGProxy new];
         objc_setAssociatedObject(tableRow, &kHoloTableRowMGProxyKey, mgProxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
-        if (!tableRow.delegate) {
-            tableRow.delegateSEL = @selector(setDelegate:);
-            tableRow.delegate = mgProxy;
-        }
+        tableRow.delegateSEL = @selector(setDelegate:);
+        tableRow.delegate = mgProxy;
     }
     return mgProxy;
 }
