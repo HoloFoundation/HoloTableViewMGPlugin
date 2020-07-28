@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HoloTableViewMGPlugin'
-  s.version          = '0.2.0'
+  s.version          = '1.0.0'
   s.summary          = 'A MGSwipeTableCell plugin for HoloTableView'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 This project adds a plugin for MGSwipeTableCell into HoloTableView, for supporting swipe actions.
                        DESC
 
-  s.homepage         = 'https://github.com/gonghonglou/HoloTableViewMGPlugin'
+  s.homepage         = 'https://github.com/HoloFoundation/HoloTableViewMGPlugin'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'gonghonglou' => 'gonghonglou@icloud.com' }
-  s.source           = { :git => 'https://github.com/gonghonglou/HoloTableViewMGPlugin.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/HoloFoundation/HoloTableViewMGPlugin.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
