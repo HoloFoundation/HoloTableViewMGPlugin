@@ -1,6 +1,6 @@
 # HoloTableViewMGPlugin
 
-[![CI Status](https://img.shields.io/travis/gonghonglou/HoloTableViewMGPlugin.svg?style=flat)](https://travis-ci.org/gonghonglou/HoloTableViewMGPlugin)
+[![CI Status](https://img.shields.io/travis/HoloFoundation/HoloTableViewMGPlugin.svg?style=flat)](https://travis-ci.org/HoloFoundation/HoloTableViewMGPlugin)
 [![Version](https://img.shields.io/cocoapods/v/HoloTableViewMGPlugin.svg?style=flat)](https://cocoapods.org/pods/HoloTableViewMGPlugin)
 [![License](https://img.shields.io/cocoapods/l/HoloTableViewMGPlugin.svg?style=flat)](https://cocoapods.org/pods/HoloTableViewMGPlugin)
 [![Platform](https://img.shields.io/cocoapods/p/HoloTableViewMGPlugin.svg?style=flat)](https://cocoapods.org/pods/HoloTableViewMGPlugin)
