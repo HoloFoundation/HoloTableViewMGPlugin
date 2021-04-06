@@ -11,8 +11,7 @@
 #import "HoloTableRowMGProxy.h"
 #import "HoloTableRowMGAction.h"
 #import "HoloTableRowMGMaker.h"
-
-static char kHoloTableRowMGProxyKey;
+#import "HoloTableRow+MGPlugin.h"
 
 @interface HoloTableRowMaker ()
 
@@ -113,15 +112,7 @@ static char kHoloTableRowMGProxyKey;
 #pragma mark - getter
 - (HoloTableRowMGProxy *)proxy {
     HoloTableRow *tableRow = [self fetchTableRow];
-    HoloTableRowMGProxy *mgProxy = objc_getAssociatedObject(tableRow, &kHoloTableRowMGProxyKey);
-    if (!mgProxy) {
-        mgProxy = [HoloTableRowMGProxy new];
-        objc_setAssociatedObject(tableRow, &kHoloTableRowMGProxyKey, mgProxy, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        
-        tableRow.delegateSEL = @selector(setDelegate:);
-        tableRow.delegate = mgProxy;
-    }
-    return mgProxy;
+    return tableRow.mgProxy;
 }
 
 @end

@@ -57,7 +57,7 @@
     } else if (direction == MGSwipeDirectionRightToLeft) {
         return self.action.rightToLeftButtons;
     } else {
-        return [NSArray new];
+        return nil;
     }
 }
 
