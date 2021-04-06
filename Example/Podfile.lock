@@ -1,6 +1,6 @@
 PODS:
   - HoloTableView (3.0.0)
-  - HoloTableViewMGPlugin (1.0.0):
+  - HoloTableViewMGPlugin (2.0.0):
     - HoloTableView
     - MGSwipeTableCell
   - MGSwipeTableCell (1.6.11)
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   HoloTableView: 02884d8f0eb1dc3a300fbdfd97b312605fa2e36b
-  HoloTableViewMGPlugin: e12e19495b0524160fe47d443d37f3c5effd8299
+  HoloTableViewMGPlugin: 593e2a23dc40066032fb0fe93f9607f94150a88e
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
 
 PODFILE CHECKSUM: 050080c758aa87de46106f4ef92c5d25be77d42a
